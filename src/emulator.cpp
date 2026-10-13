@@ -47,6 +47,7 @@ static void PrintSystemInfo() {
 #endif
 
 	LOGF("Build\n"
+	     "  name:    " KYTY_PRODUCT_NAME "\n"
 	     "  version: %s\n\n"
 	     "Host\n"
 	     "  os:      %s\n"

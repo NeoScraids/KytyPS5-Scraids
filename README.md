@@ -1,4 +1,13 @@
-# KytyPS5 experimental
+# KytyPS5-Scraids
+
+> **KytyPS5-Scraids** is a fork focused on smooth, stable performance on AMD Radeon GPUs
+> (RDNA 2/3/4). It is based on [Jetsku/KytyPS5](https://github.com/Jetsku/KytyPS5) (the U59
+> renderer and its AMD device-lost fixes), which is itself a fork of
+> [KytyPS5](https://github.com/KytyPS5/KytyPS5). All credit for the emulator goes to the KytyPS5,
+> Jetsku and Kyty authors; licenses are unchanged (GPL-2.0-only, original Kyty MIT license in
+> `LICENSES/Kyty-MIT.txt`).
+
+## Jetsku/KytyPS5 base
 
 The main branch contains the U59 renderer, the validated Demon's Souls shader and
 compatibility changes, and the U59 integration work: command-processor and VRAM
@@ -10,8 +19,7 @@ result is claimed.
 - [Current release: what is new, launch and build guide](docs/EXPERIMENTAL.md)
 
 This fork retains sanitized development history and upstream attribution.
-The badges and general project description below refer to upstream. Packaged
-Windows builds are available under Releases.
+The badges and general project description below refer to upstream.
 
 [![Build KytyPS5 (Windows)](https://img.shields.io/github/check-runs/KytyPS5/KytyPS5/main?nameFilter=Build%20KytyPS5%20%28Windows%29&label=Build%20KytyPS5%20%28Windows%29)](https://github.com/KytyPS5/KytyPS5/actions/workflows/build.yml)
 [![Build KytyPS5 (Linux)](https://img.shields.io/github/check-runs/KytyPS5/KytyPS5/main?nameFilter=Build%20KytyPS5%20%28Linux%29&label=Build%20KytyPS5%20%28Linux%29)](https://github.com/KytyPS5/KytyPS5/actions/workflows/build.yml)

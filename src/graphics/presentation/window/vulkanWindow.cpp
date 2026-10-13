@@ -1722,7 +1722,7 @@ void WindowContext::CreateVulkan() {
 	VulkanCheckInstanceVersion();
 
 	vk::ApplicationInfo app_info {};
-	app_info.pApplicationName   = "Kyty";
+	app_info.pApplicationName   = "KytyPS5-Scraids";
 	app_info.applicationVersion = 1;
 	app_info.pEngineName        = "Kyty";
 	app_info.engineVersion      = 1;

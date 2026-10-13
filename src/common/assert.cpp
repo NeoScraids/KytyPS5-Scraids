@@ -24,8 +24,8 @@ namespace Common {
 
 static std::string BuildFatalReport(const char* title, std::string_view text, const char* file,
                                     int line) {
-	return fmt::format("--- Build ---\n{}\n{}\n{} in {}:{}\n", KYTY_BUILD_LABEL, title, text, file,
-	                   line);
+	return fmt::format("--- Build ---\n{} {}\n{}\n{} in {}:{}\n", KYTY_PRODUCT_NAME,
+	                   KYTY_BUILD_LABEL, title, text, file, line);
 }
 
 static int DbgReport(const char* title, std::string_view text, const char* file, int line) {

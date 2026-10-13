@@ -6,6 +6,9 @@
 // Full commit identity used for compatibility checks.
 #define KYTY_GIT_REVISION "@KYTY_GIT_REVISION@"
 
+/* Product name shown in the window title, logs, and crash reports. */
+#define KYTY_PRODUCT_NAME "KytyPS5-Scraids"
+
 /* Build provenance, shown in the window title and in crash reports. */
 #if defined(KYTY_OFFICIAL_BUILD)
 #define KYTY_BUILD_LABEL "Official build " KYTY_RELEASE_TAG
