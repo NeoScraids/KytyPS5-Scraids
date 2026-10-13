@@ -475,12 +475,19 @@ void Swapchain::Create() {
 		case Config::PresentMode::Immediate:
 			create_info.presentMode = vk::PresentModeKHR::eImmediate;
 			break;
+		case Config::PresentMode::FifoRelaxed:
+			create_info.presentMode = vk::PresentModeKHR::eFifoRelaxed;
+			break;
 		case Config::PresentMode::Fifo:
 		default: create_info.presentMode = vk::PresentModeKHR::eFifo; break;
 	}
 	if (std::find(surface.present_modes.begin(), surface.present_modes.end(),
 	              create_info.presentMode) == surface.present_modes.end()) {
-		LOGF("warning: requested present mode is unavailable; falling back to Fifo\n");
+		// Shown even with logging off: AMD's Windows driver has no Mailbox, and the silent
+		// fallback made Mailbox and Fifo look like different settings.
+		Log::WriteToConsoleAndLog(
+		    fmt::format("Present mode {} is not supported by this GPU driver; using Fifo\n",
+		                vk::to_string(create_info.presentMode)));
 		create_info.presentMode = vk::PresentModeKHR::eFifo;
 	}
 	create_info.clipped = VK_TRUE;
@@ -494,8 +501,9 @@ void Swapchain::Create() {
 	    });
 	EXIT_NOT_IMPLEMENTED(m_images.empty());
 	// Freeze reports depend on it (RTX 50 PCs froze in Mailbox, not in Fifo).
-	LOGF("Swapchain: %ux%u, %zu images, present mode %s\n", m_extent.width, m_extent.height,
-	     m_images.size(), vk::to_string(create_info.presentMode).c_str());
+	Log::WriteToConsoleAndLog(fmt::format("Swapchain: {}x{}, {} images, present mode {}\n",
+	                                      m_extent.width, m_extent.height, m_images.size(),
+	                                      vk::to_string(create_info.presentMode)));
 
 	m_image_views.resize(m_images.size());
 	for (size_t i = 0; i < m_images.size(); i++) {

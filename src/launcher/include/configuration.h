@@ -120,7 +120,7 @@ public:
 	enum class ShaderOptimizationType { None, Size, Performance };
 	Q_ENUM(ShaderOptimizationType)
 
-	enum class PresentMode { Fifo, Mailbox, Immediate };
+	enum class PresentMode { Fifo, Mailbox, Immediate, FifoRelaxed };
 	Q_ENUM(PresentMode)
 
 	enum class LogDirection { Silent, Console, File };

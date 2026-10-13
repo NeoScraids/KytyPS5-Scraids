@@ -114,7 +114,8 @@ static void PrintUsage() {
 	         "                                      the game sound. Default: 100.\n");
 	::printf("  --audio-objects <on|off>            Play 3D audio objects (off: dropped). Default: on.\n");
 	::printf(
-	    "  --present-mode <value>               Fifo, Mailbox, or Immediate. Default: Mailbox.\n");
+	    "  --present-mode <value>               Fifo, Mailbox, Immediate, or FifoRelaxed.\n"
+	    "                                       Default: Mailbox.\n");
 	::printf(
 	    "  --gpu <index>                        Vulkan physical device index. Default: auto.\n");
 	::printf("  --fullscreen                         Run in borderless desktop fullscreen.\n");
